@@ -1,3 +1,22 @@
-<h1>
-  {{title}}
-</h1>
+<section class="app flex-container" fxLayout="column" fxLayoutAlign="start stretch">
+  <md-toolbar color="primary" class="mat-elevation-z10">
+    <i class="material-icons md-18">favorites</i>
+    Derek Zoolander's Center for Models Who Can't Find Hapiness
+  </md-toolbar>
+
+  <md-sidenav-container fxFlex>
+    <md-sidenav mode="side" align="end" opened class="mat-elevation-z6">
+      <md-tab-group>
+        <md-tab label="About"></md-tab>
+        <md-tab label="Messages"></md-tab>
+        <md-tab label="Photos"></md-tab>
+
+      </md-tab-group>
+    </md-sidenav>
+    <md-grid-list cols="4" rowHeight="250px">
+      <md-grid-tile *ngFor="let model of models">
+        <img src="assets/images/.png" alt="model">
+      </md-grid-tile>
+    </md-grid-list>
+  </md-sidenav-container>
+</section>
