@@ -5,7 +5,7 @@
   </md-toolbar>
 
   <md-sidenav-container fxFlex>
-    <md-sidenav mode="side" align="end" opened class="mat-elevation-z6">
+    <md-sidenav mode="side" align="end"  class="mat-elevation-z6"  #sidenav>
       <md-tab-group>
         <md-tab label="About"></md-tab>
         <md-tab label="Messages"></md-tab>
@@ -16,6 +16,13 @@
     <md-grid-list cols="4" rowHeight="250px">
       <md-grid-tile *ngFor="let model of models">
         <img src="assets/{{model.name}}.png" alt="model ">
+        <md-grid-tile-footer>
+          <h3 md-line>{{model.name}}</h3>
+          <span md-line>{{model.status}}</span>
+          <button md-icon-button (click)="showDetails(model)">
+            <i class="material-icons">info</i>
+          </button>
+        </md-grid-tile-footer>
       </md-grid-tile>
     </md-grid-list>
   </md-sidenav-container>
